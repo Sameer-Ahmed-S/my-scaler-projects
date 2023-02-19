@@ -26,3 +26,9 @@ attributes (
  > .\gradlew.bat jar
  > java -jar .\build\libs\java-basic-1.0-SNAPSHOT.jar
 ```
+
+
+### Libraries to call Http endpoints
+
+- OkHttp 
+- Retrofit -A type-safe HTTP client for Android and Java
