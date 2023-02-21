@@ -32,3 +32,9 @@ attributes (
 
 - OkHttp 
 - Retrofit -A type-safe HTTP client for Android and Java
+
+### How to upgrade the gradle
+
+```
+./gradlew.bat wrapper --gradle-version 8.0
+```
