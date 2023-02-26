@@ -19,7 +19,7 @@ public class Main {
             var httpLib= new HttpLib();
             System.out.print(httpLib.getExampleDotCom());
         }
-        else if(args.length>0 && args[0].equals("post"))
+        else if(args.length>0 && args[0].equals("posts"))
         {
             Retrofit retrofit = new Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create())
@@ -34,6 +34,22 @@ public class Main {
                 System.out.println(data.getTitle());
             });
         }
+        else if(args.length>0 && args[0].equals("photos"))
+        {
+
+            Retrofit retrofit= new Retrofit.Builder()
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .baseUrl("https://jsonplaceholder.typicode.com/")
+                    .build();
+
+            JSONPlaceholderAPI service= retrofit.create(JSONPlaceholderAPI.class);
+            Call<List<Photo>> photos= service.getPhotos();
+
+            photos.execute().body().forEach(data->{
+               System.out.println(data.toString());
+            });
+        }
+
 
 
 

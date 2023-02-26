@@ -6,8 +6,6 @@ group 'org.scaler'
 version '1.0-SNAPSHOT'
 
 
-
-
 repositories {
     mavenCentral()
 }
@@ -33,9 +31,9 @@ task runApp(type: JavaExec) {
 jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     manifest {
-        attributes (
-            'Class-Path' : configurations.runtimeClasspath.collect { it.getName() }.join(' ') ,
-            'mainClass' : 'org.scaler.Main'
+        attributes(
+                'Class-Path': configurations.runtimeClasspath.collect { it.getName() }.join(' '),
+                'Main-Class': 'org.scaler.Main'
 
         )
     }

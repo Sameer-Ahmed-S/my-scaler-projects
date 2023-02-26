@@ -18,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -56,7 +56,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.java-basic [runApp]">
+  <component name="RunManager" selected="Gradle.PhotosAPITests.testGetPhotos">
     <configuration name="MainClass" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="org.scaler.Main" />
       <module name="java-basic.main" />
@@ -69,6 +69,29 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="PhotosAPITests.testGetPhotos" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;PhotosAPITests.testGetPhotos&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="java-basic [runApp]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -93,10 +116,12 @@
     </configuration>
     <list>
       <item itemvalue="Application.MainClass" />
+      <item itemvalue="Gradle.PhotosAPITests.testGetPhotos" />
       <item itemvalue="Gradle.java-basic [runApp]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PhotosAPITests.testGetPhotos" />
         <item itemvalue="Gradle.java-basic [runApp]" />
         <item itemvalue="Application.MainClass" />
       </list>
@@ -115,7 +140,9 @@
       <workItem from="1676907389020" duration="633000" />
       <workItem from="1676997140044" duration="7762000" />
       <workItem from="1677005624463" duration="436000" />
-      <workItem from="1677006067113" duration="1173000" />
+      <workItem from="1677006067113" duration="1819000" />
+      <workItem from="1677338209217" duration="4231000" />
+      <workItem from="1677417536815" duration="78000" />
     </task>
     <servers />
   </component>

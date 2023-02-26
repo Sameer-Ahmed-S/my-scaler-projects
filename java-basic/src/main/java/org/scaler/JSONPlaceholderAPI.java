@@ -9,6 +9,9 @@ public interface JSONPlaceholderAPI {
 
     @GET("posts")
     Call<List<Post>> getPosts();
+
+    @GET("photo")
+    Call<List<Photo>> getPhotos();
 }
 
 
