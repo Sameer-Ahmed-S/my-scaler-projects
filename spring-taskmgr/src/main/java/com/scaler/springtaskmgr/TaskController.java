@@ -1,11 +1,14 @@
 package com.scaler.springtaskmgr;
 
+import com.scaler.springtaskmgr.exceptions.ResourceNotFoundException;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
@@ -38,30 +41,49 @@ public class  TaskController {
 
     /**
      * Get a task by id
-     * @param id
+     * @param id Task id
      * @return Task object
      */
     @GetMapping("/tasks/{id}")
     Task getTask(@PathVariable("id") Integer id)
     {
-        // TODO: Implement this method
-        // TODO: BONUS: return 404 if task not found
+         Optional<Task> task=taskList.stream().filter(t-> t.id==id).findFirst();
 
-
-        return null;
+         if(task.isPresent())
+         {
+             return task.get();
+         }
+         else
+         {
+            // throw new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("Task with id:%d not found",id));
+             throw new ResourceNotFoundException(String.format("Task with id:%d not found",id));
+         }
     }
 
     /**
      * Delete a task by given id
-     * @param id
+     * @param id Task id
      * @return Task deleted task
      */
     @DeleteMapping("/tasks/{id}")
     Task deleteTask(@PathVariable("id") Integer id)
     {
-        // TODO: Implement this method
-        // TODO: BONUS: Return 404 if task not found
-        return null;
+
+        Optional<Task> task=taskList.stream().filter(t-> t.id==id).findFirst();
+
+        if(task.isPresent())
+        {
+            Task taskToBeDeleted= task.get();
+
+            taskList.remove(taskToBeDeleted);
+            return taskToBeDeleted;
+        }
+        else
+        {
+            // throw new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("Task with id:%d not found",id));
+            throw new ResourceNotFoundException(String.format("Task with id:%d not found",id));
+        }
+
     }
 
     /**
