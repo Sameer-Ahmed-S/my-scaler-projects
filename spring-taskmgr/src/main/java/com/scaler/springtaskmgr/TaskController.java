@@ -1,17 +1,16 @@
 package com.scaler.springtaskmgr;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
-public class TaskController {
+public class  TaskController {
+
 
     private final List<Task> taskList;
     private final AtomicInteger taskId = new AtomicInteger(0);
@@ -36,4 +35,32 @@ public class TaskController {
         taskList.add(newTask);
         return newTask;
     }
+
+    /**
+     * Get a task by id
+     * @param id
+     * @return Task object
+     */
+    @GetMapping("/tasks/{id}")
+    Task getTask(@PathVariable("id") Integer id)
+    {
+        // TODO: Implement this method
+        // TODO: BONUS: return 404 if task not found
+        return null;
+    }
+
+    /**
+     * Delete a task by given id
+     * @param id
+     * @return Task deleted task
+     */
+    @DeleteMapping("/tasks/{id}")
+    Task deleteTask(@PathVariable("id") Integer id)
+    {
+        // TODO: Implement this method
+        // TODO: BONUS: Return 404 if task not found
+        return null;
+    }
+
+
 }
