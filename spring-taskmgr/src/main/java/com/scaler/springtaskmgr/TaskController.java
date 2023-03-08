@@ -48,7 +48,7 @@ public class  TaskController {
         // TODO: BONUS: return 404 if task not found
 
 
-        return NoFound();
+        return null;
     }
 
     /**
