@@ -46,7 +46,9 @@ public class  TaskController {
     {
         // TODO: Implement this method
         // TODO: BONUS: return 404 if task not found
-        return null;
+
+
+        return NoFound();
     }
 
     /**
@@ -62,5 +64,18 @@ public class  TaskController {
         return null;
     }
 
+    /**
+     * Update a task by given id
+     * @param id Task id to update
+     * @param task Task object sent by client
+     * @return the udpated task
+     */
+    Task updateTask(@PathVariable("id") Integer id,@RequestBody Task task)
+    {
+        // TODO: BONUS: Update the task with given id
+        // Request body might have only title, description or dueData ( not necessarily all fields)
+        return null;
+
+    }
 
 }
