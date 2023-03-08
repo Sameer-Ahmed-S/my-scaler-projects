@@ -14,6 +14,7 @@ public class Main {
 
         System.out.println(Lib.getGreeting());
 
+        JSONPlaceholderAPI service= JSONPlaceholderAPI.getInstance();
         if(args.length>0  && args[0].equals("example"))
         {
             var httpLib= new HttpLib();
@@ -21,12 +22,6 @@ public class Main {
         }
         else if(args.length>0 && args[0].equals("posts"))
         {
-            Retrofit retrofit = new Retrofit.Builder()
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl("https://jsonplaceholder.typicode.com/")
-                    .build();
-
-            JSONPlaceholderAPI service= retrofit.create(JSONPlaceholderAPI.class);
 
             Call<List<Post>> posts = service.getPosts();
 
@@ -36,13 +31,6 @@ public class Main {
         }
         else if(args.length>0 && args[0].equals("photos"))
         {
-
-            Retrofit retrofit= new Retrofit.Builder()
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl("https://jsonplaceholder.typicode.com/")
-                    .build();
-
-            JSONPlaceholderAPI service= retrofit.create(JSONPlaceholderAPI.class);
             Call<List<Photo>> photos= service.getPhotos();
 
             photos.execute().body().forEach(data->{
